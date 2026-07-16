@@ -557,7 +557,7 @@ const handleRoute = () => {
     slideshowInterval = null;
   }
 
-  const isArticlePage = (route === "article" || route === "about");
+  const isArticlePage = (route === "article" || route === "about" || route === "/" || route === "home");
   header.classList.toggle("header-gradient", isArticlePage);
 
   if (route === "/" || route === "home") {
