@@ -1,12 +1,11 @@
 ---
 title: After the Show
-main_image: images/bw03.jpg
 header: After the Show
-hook: "What stays when the applause is gone."
+hook: Test test test meow meow meow
 date: 2024-06-22
 theme: Reflection
+main_image: /images/bw03.jpg
 ---
-
 ## The quiet stage
 
 The lights fade, the audience leaves, and what remains is the echo of a promise: make something honest.
