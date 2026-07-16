@@ -174,11 +174,14 @@ const renderHero = () => {
 
   hero.appendChild(slideshowContainer);
 
+  const heroHeader = siteData.settings.hero_header || "Honor other's&nbsp;passions,<br />honor your own.";
+  const heroSubtitle = siteData.settings.hero_subtitle || "A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.";
+
   const content = document.createElement("div");
   content.className = "hero-content-inner";
   content.innerHTML = `
-    <h1>Honor other's&nbsp;passions,<br />honor your own.</h1>
-    <p>A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.</p>
+    <h1>${heroHeader}</h1>
+    <p>${heroSubtitle}</p>
     <button class="button button-dark" data-link="contact"><span>Share your story</span></button>
   `;
   content.querySelector("button").addEventListener("click", () => {
@@ -257,15 +260,17 @@ const renderHero = () => {
 };
 
 const renderAbout = () => {
+  const authorArticle = siteData.articles.find((art) => art.slug === "about-author");
+  const blurbText = authorArticle && authorArticle.hook
+    ? authorArticle.hook
+    : "A quick portrait of the storyteller behind One Day, the moments that shaped her, and the people she is honoring through every post.";
+
   const section = document.createElement("section");
   section.className = "section about-author";
   section.innerHTML = `
     <div>
       <h2>About the Author</h2>
-      <p>${
-        siteData.settings.about_blurb ||
-        "A quick portrait of the storyteller behind One Day, the moments that shaped her, and the people she is honoring through every post."
-      }</p>
+      <p>${blurbText}</p>
       <button class="button button-light" data-link="about">Read More</button>
     </div>
     <div class="author-image" role="img" aria-label="Portrait of the author"></div>

@@ -50,8 +50,11 @@ content:
         label: Logo Text
         type: string
         required: true
-      - name: about_blurb
-        label: About Blurb
+      - name: hero_header
+        label: Hero Header Text
+        type: string
+      - name: hero_subtitle
+        label: Hero Subtitle Text
         type: string
       - name: body
         label: Global Settings Footer/Description
