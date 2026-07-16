@@ -777,6 +777,12 @@ main > .section:first-child .stories-header {
   color: var(--od-light-grey);
 }
 
+.story-controls input:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px var(--od-yellow);
+}
+
 .site-footer {
   padding: 120px 24px 140px;
   background: #000;
