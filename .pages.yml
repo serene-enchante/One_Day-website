@@ -50,6 +50,9 @@ content:
         label: Logo Text
         type: string
         required: true
+      - name: favicon
+        label: Favicon Image
+        type: image
       - name: hero_header
         label: Hero Header Text
         type: string

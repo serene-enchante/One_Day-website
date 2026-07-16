@@ -82,6 +82,16 @@ const fetchData = async () => {
     throw new Error("Unable to load articles.");
   }
   siteData = await response.json();
+
+  if (siteData.settings && siteData.settings.favicon) {
+    let link = document.querySelector("link[rel~='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.href = cleanImageUrl(siteData.settings.favicon);
+  }
 };
 
 const setActiveNav = (route) => {
