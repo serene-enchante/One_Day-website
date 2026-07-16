@@ -405,6 +405,14 @@ img {
   font-style: italic;
 }
 
+.article-meta-top {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
 .article-meta {
   color: var(--od-white);
   display: flex;
