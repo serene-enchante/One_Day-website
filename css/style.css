@@ -390,6 +390,21 @@ img {
   margin-bottom: 12px;
 }
 
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--od-white);
+  line-height: 1.5;
+}
+
+.hero-article .hero-subtitle {
+  color: var(--od-light-grey);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-top: 0;
+  margin-bottom: 20px;
+  max-width: 640px;
+  font-style: italic;
+}
+
 .article-meta {
   color: var(--od-light-grey);
   display: flex;

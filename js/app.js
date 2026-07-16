@@ -123,8 +123,8 @@ const buildHeroSection = ({
   hero.innerHTML = `
     <div class="${alignEnd ? "article-hero-inner" : ""}">
       <h1>${title}</h1>
+      ${subtitle ? `<p class="hero-subtitle">${subtitle}</p>` : ""}
       ${metaText ? `<div class="article-meta">${metaText}</div>` : ""}
-      ${subtitle ? `<p>${subtitle}</p>` : ""}
       ${
         buttonText
           ? `<button class="button button-dark" data-link="${buttonRoute}"><span>${buttonText}</span></button>`
@@ -328,6 +328,7 @@ const renderArticle = (slug) => {
   app.innerHTML = "";
   const hero = buildHeroSection({
     title: article.header || article.title,
+    subtitle: article.hook,
     metaText: `<div class="article-meta-left"><span>${formatDate(article.date)} · ${article.theme}</span><div class="article-meta-arrows"><button class="article-hero-arrow" data-target="prev" aria-label="Previous article">&#8592;</button><button class="article-hero-arrow" data-target="next" aria-label="Next article">&#8594;</button></div></div><button class="button button-dark button-inline" type="button"><span>Print Poster</span></button>`,
     imageUrl: article.main_image,
     alignEnd: true,
@@ -335,7 +336,6 @@ const renderArticle = (slug) => {
   const content = document.createElement("section");
   content.className = "section article-content";
   content.innerHTML = `
-    <p class="article-hook">${article.hook}</p>
     <div class="article-body">${markdownToHtml(article.body)}</div>
   `;
   const poster = document.createElement("section");
