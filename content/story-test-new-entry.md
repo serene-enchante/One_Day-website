@@ -4,6 +4,6 @@ header: title
 hook: Test test test meow meow meow
 date: 2026-07-16
 theme: testing
-main_image: /images/pexels-deklansor-67-105200005-9587176-1.webp
+main_image: /images/pexels-omaralnahi-45702.webp
 ---
 test test 
