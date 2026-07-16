@@ -7,6 +7,7 @@ let siteData = { settings: {}, articles: [] };
 let isTicking = false;
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 let articleKeyHandler = null;
+let slideshowInterval = null;
 
 const slugify = (value) =>
   value
@@ -144,13 +145,115 @@ const buildHeroSection = ({
 };
 
 const renderHero = () => {
-  return buildHeroSection({
-    title: "Honor other's&nbsp;passions,<br />honor your own.",
-    subtitle:
-      "A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.",
-    buttonText: "Share your story",
-    buttonRoute: "contact",
+  const slideshowArticles = siteData.articles.filter(
+    (art) => art.main_image && art.slug !== "about-author"
+  );
+
+  const shuffled = [...slideshowArticles].sort(() => Math.random() - 0.5);
+
+  const hero = document.createElement("section");
+  hero.className = "section hero-base hero-fold";
+
+  const slideshowContainer = document.createElement("div");
+  slideshowContainer.className = "hero-slideshow-container";
+
+  shuffled.forEach((art, idx) => {
+    const slide = document.createElement("div");
+    slide.className = `hero-slide${idx === 0 ? " active" : ""}`;
+    const cleanImg = cleanImageUrl(art.main_image);
+    slide.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${cleanImg}')`;
+    slideshowContainer.appendChild(slide);
   });
+
+  if (shuffled.length === 0) {
+    const slide = document.createElement("div");
+    slide.className = "hero-slide active";
+    slide.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('images/bw.jpg')`;
+    slideshowContainer.appendChild(slide);
+  }
+
+  hero.appendChild(slideshowContainer);
+
+  const content = document.createElement("div");
+  content.className = "hero-content-inner";
+  content.innerHTML = `
+    <h1>Honor other's&nbsp;passions,<br />honor your own.</h1>
+    <p>A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.</p>
+    <button class="button button-dark" data-link="contact"><span>Share your story</span></button>
+  `;
+  content.querySelector("button").addEventListener("click", () => {
+    location.hash = "#/contact";
+  });
+  hero.appendChild(content);
+
+  const navOverlay = document.createElement("div");
+  navOverlay.className = "hero-slideshow-nav";
+
+  const infoSpan = document.createElement("span");
+  infoSpan.className = "hero-slideshow-info";
+
+  const dotsContainer = document.createElement("div");
+  dotsContainer.className = "hero-slideshow-dots";
+
+  shuffled.forEach((art, idx) => {
+    const dot = document.createElement("span");
+    dot.className = `hero-dot${idx === 0 ? " active" : ""}`;
+    dot.dataset.index = idx;
+    dotsContainer.appendChild(dot);
+  });
+
+  navOverlay.appendChild(infoSpan);
+  navOverlay.appendChild(dotsContainer);
+  hero.appendChild(navOverlay);
+
+  let currentSlide = 0;
+
+  const updateSlide = (nextIndex) => {
+    const slides = slideshowContainer.querySelectorAll(".hero-slide");
+    const dots = dotsContainer.querySelectorAll(".hero-dot");
+    if (!slides.length || !dots.length) return;
+
+    slides[currentSlide].classList.remove("active");
+    dots[currentSlide].classList.remove("active");
+
+    currentSlide = nextIndex;
+
+    slides[currentSlide].classList.add("active");
+    dots[currentSlide].classList.add("active");
+
+    const activeArt = shuffled[currentSlide];
+    infoSpan.innerHTML = `showing image from <a href="#/article/${activeArt.slug}">${activeArt.title}</a>`;
+  };
+
+  if (shuffled.length > 0) {
+    updateSlide(0);
+  } else {
+    navOverlay.style.display = "none";
+  }
+
+  const startSlideshow = () => {
+    slideshowInterval = setInterval(() => {
+      const nextIdx = (currentSlide + 1) % shuffled.length;
+      updateSlide(nextIdx);
+    }, 10000);
+  };
+
+  dotsContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("hero-dot")) {
+      const targetIdx = parseInt(e.target.dataset.index);
+      if (targetIdx !== currentSlide) {
+        clearInterval(slideshowInterval);
+        updateSlide(targetIdx);
+        startSlideshow();
+      }
+    }
+  });
+
+  if (shuffled.length > 1) {
+    startSlideshow();
+  }
+
+  return hero;
 };
 
 const renderAbout = () => {
@@ -448,6 +551,11 @@ const handleRoute = () => {
   const route = parts[0] || "/";
 
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+  if (slideshowInterval) {
+    clearInterval(slideshowInterval);
+    slideshowInterval = null;
+  }
 
   const isArticlePage = (route === "article" || route === "about");
   header.classList.toggle("header-gradient", isArticlePage);
