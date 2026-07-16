@@ -4,7 +4,7 @@ header: After the Show
 hook: Test test test meow meow meow
 date: 2024-06-22
 theme: Reflection
-main_image: /images/bw03.jpg
+main_image: /images/pexels-archana-ramakrishna-221711916-13548213.webp
 ---
 ## The quiet stage
 
