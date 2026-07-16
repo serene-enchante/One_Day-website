@@ -330,7 +330,7 @@ img {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 12px));
+    transform: translateX(calc(-25% - 6px));
   }
 }
 

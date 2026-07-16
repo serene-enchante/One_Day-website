@@ -208,15 +208,12 @@ const renderStoriesRow = () => {
     .filter((article) => article.slug !== "about-author")
     .slice(0, 6);
 
-  // Render first set
-  articlesToRender.forEach((article, index) => {
-    row.appendChild(buildTile(article, index));
-  });
-
-  // Render duplicated set for seamless loop
-  articlesToRender.forEach((article, index) => {
-    row.appendChild(buildTile(article, index));
-  });
+  // Render 4 sets of tiles to ensure infinite chaining on large screens
+  for (let i = 0; i < 4; i++) {
+    articlesToRender.forEach((article, index) => {
+      row.appendChild(buildTile(article, index));
+    });
+  }
 
   wrapper.appendChild(row);
 
