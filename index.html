@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>One Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" id="site-header">
+      <div class="nav-shell">
+        <a class="text-logo" href="#/">One Day</a>
+        <nav class="site-nav" id="site-nav">
+          <a href="#/" data-route="/">Home</a>
+          <a href="#/stories" data-route="stories">Our Stories</a>
+          <a href="#/about" data-route="about">About the Author</a>
+          <a href="#/contact" data-route="contact">Contact Us</a>
+          <span class="nav-indicator" aria-hidden="true"></span>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="app" class="app"></main>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <div class="footer-logo">One Day</div>
+        <nav class="footer-nav footer-nav-row">
+          <a href="#/">Home</a>
+          <a href="#/stories">Our Stories</a>
+          <a href="#/about">About the Author</a>
+          <a href="#/contact">Contact Us</a>
+        </nav>
+      </div>
+    </footer>
+
+    <template id="tile-template">
+      <article class="tile">
+        <div class="tile-image"></div>
+        <div class="tile-body">
+          <p class="tile-date"></p>
+          <h3 class="tile-title"></h3>
+          <p class="tile-hook"></p>
+        </div>
+      </article>
+    </template>
+  </body>
+</html>
