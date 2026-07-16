@@ -999,6 +999,7 @@ main > .section:first-child .stories-header {
     justify-self: end;
     position: relative;
     z-index: 1000;
+    padding-right: 0;
   }
 
   .menu-toggle.open span {
