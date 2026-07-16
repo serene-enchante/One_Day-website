@@ -267,7 +267,7 @@ img {
 
 .hero-article {
   align-items: end;
-  padding: 140px 24px 60px;
+  padding: 140px 24px 100px;
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -995,6 +995,10 @@ main > .section:first-child .stories-header {
 
   .hero-base {
     padding: 40px 24px;
+  }
+
+  .hero-article {
+    padding: 140px 24px 90px;
   }
 
   .about-author {
