@@ -440,6 +440,9 @@ const handleRoute = () => {
 
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
+  const isArticlePage = (route === "article" || route === "about");
+  header.classList.toggle("header-gradient", isArticlePage);
+
   if (route === "/" || route === "home") {
     setActiveNav("/");
     renderHome();
