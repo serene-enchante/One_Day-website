@@ -112,6 +112,7 @@ const buildHeroSection = ({
   buttonRoute,
   imageUrl,
   metaText,
+  metaTop,
   alignEnd = false,
 }) => {
   const hero = document.createElement("section");
@@ -122,6 +123,7 @@ const buildHeroSection = ({
   }
   hero.innerHTML = `
     <div class="${alignEnd ? "article-hero-inner" : ""}">
+      ${metaTop ? `<div class="article-meta-top">${metaTop}</div>` : ""}
       <h1>${title}</h1>
       ${subtitle ? `<p class="hero-subtitle">${subtitle}</p>` : ""}
       ${metaText ? `<div class="article-meta">${metaText}</div>` : ""}
@@ -329,7 +331,8 @@ const renderArticle = (slug) => {
   const hero = buildHeroSection({
     title: article.header || article.title,
     subtitle: article.hook,
-    metaText: `<div class="article-meta-left"><span>${formatDate(article.date)} · ${article.theme}</span><div class="article-meta-arrows"><button class="article-hero-arrow" data-target="prev" aria-label="Previous article">&#8592;</button><button class="article-hero-arrow" data-target="next" aria-label="Next article">&#8594;</button></div></div><button class="button button-dark button-inline" type="button"><span>Print Poster</span></button>`,
+    metaTop: `${formatDate(article.date)} · ${article.theme}`,
+    metaText: `<div class="article-meta-left"><div class="article-meta-arrows"><button class="article-hero-arrow" data-target="prev" aria-label="Previous article">&#8592;</button><button class="article-hero-arrow" data-target="next" aria-label="Next article">&#8594;</button></div></div><button class="button button-dark button-inline" type="button"><span>Print Poster</span></button>`,
     imageUrl: article.main_image,
     alignEnd: true,
   });
