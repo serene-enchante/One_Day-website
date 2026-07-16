@@ -517,13 +517,16 @@ const renderArticle = (slug) => {
 
   const isAuthorPage = (slug === "about-author");
 
+  const printIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="button-icon"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>`;
+  const shareIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="button-icon"><path d="M12 2l-4 4h3v6h2V6h3l-4-4zm6 10v8H6v-8H4v10h16V12h-2z"/></svg>`;
+
   const hero = buildHeroSection({
     title: article.header || article.title,
     subtitle: article.hook,
     metaTop: `${formatDate(article.date)} · ${article.theme}`,
     metaText: isAuthorPage
-      ? `<button class="button button-dark button-inline" type="button" id="share-btn"><span>Share</span></button>`
-      : `<div class="article-meta-left"><div class="article-meta-arrows"><button class="article-hero-arrow" data-target="prev" aria-label="Previous article">&#8592;</button><button class="article-hero-arrow" data-target="next" aria-label="Next article">&#8594;</button></div></div><div class="article-meta-actions"><button class="button button-dark button-inline" type="button" id="print-poster-btn"><span>Print Poster</span></button><button class="button button-dark button-inline" type="button" id="share-btn"><span>Share</span></button></div>`,
+      ? `<button class="button button-dark button-inline" type="button" id="share-btn" aria-label="Share">${shareIcon}<span>Share</span></button>`
+      : `<div class="article-meta-left"><div class="article-meta-arrows"><button class="article-hero-arrow" data-target="prev" aria-label="Previous article">&#8592;</button><button class="article-hero-arrow" data-target="next" aria-label="Next article">&#8594;</button></div></div><div class="article-meta-actions"><button class="button button-dark button-inline" type="button" id="print-poster-btn" aria-label="Print Poster">${printIcon}<span>Print Poster</span></button><button class="button button-dark button-inline" type="button" id="share-btn" aria-label="Share">${shareIcon}<span>Share</span></button></div>`,
     imageUrl: article.main_image,
     alignEnd: true,
   });
