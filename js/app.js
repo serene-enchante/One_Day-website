@@ -627,6 +627,14 @@ const updateHeroFold = () => {
     const progress = Math.min(travel / (height * 0.6), 1);
     const notch = (progress * 8).toFixed(2);
     hero.style.setProperty("--hero-notch", `${notch}%`);
+
+    const nav = hero.querySelector(".hero-slideshow-nav");
+    if (nav) {
+      const opacity = Math.max(0, 1 - window.scrollY / 150);
+      nav.style.opacity = opacity;
+      nav.style.pointerEvents = opacity === 0 ? "none" : "auto";
+    }
+
     if (isIOS) {
       hero.style.setProperty("--hero-parallax", "0px");
       return;
