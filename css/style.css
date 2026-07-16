@@ -528,7 +528,7 @@ main > .section:first-child .stories-header {
   padding: 10px 16px;
   border-radius: 999px;
   border: none;
-  background: #1c1c1c;
+  background: #3b3b3b;
   color: var(--od-white);
   outline: none;
 }
@@ -765,10 +765,16 @@ main > .section:first-child .stories-header {
   padding: 14px 16px;
   border-radius: 14px;
   border: none;
-  background: #1b1b1b;
+  background: #3b3b3b;
   color: var(--od-white);
   line-height: 1.5;
   outline: none;
+}
+
+.story-controls input::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--od-light-grey);
 }
 
 .site-footer {
