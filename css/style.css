@@ -584,7 +584,7 @@ main > .section:first-child .stories-header {
   background: #3b3b3b;
   color: var(--od-white);
   outline: none;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 0px transparent, 0 20px 40px rgba(0, 0, 0, 0.35);
   transition: box-shadow 0.3s ease;
 }
 
@@ -853,7 +853,7 @@ main > .section:first-child .stories-header {
   color: var(--od-white);
   line-height: 1.5;
   outline: none;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 0px transparent, 0 20px 40px rgba(0, 0, 0, 0.35);
   transition: box-shadow 0.3s ease;
 }
 
