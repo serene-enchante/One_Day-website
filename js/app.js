@@ -161,7 +161,11 @@ const renderHero = () => {
     const slide = document.createElement("div");
     slide.className = `hero-slide${idx === 0 ? " active" : ""}`;
     const cleanImg = cleanImageUrl(art.main_image);
-    slide.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${cleanImg}')`;
+    if (idx === 0) {
+      slide.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${cleanImg}')`;
+    } else {
+      slide.dataset.bg = cleanImg;
+    }
     slideshowContainer.appendChild(slide);
   });
 
@@ -216,6 +220,19 @@ const renderHero = () => {
     const dots = dotsContainer.querySelectorAll(".hero-dot");
     if (!slides.length || !dots.length) return;
 
+    const nextSlideEl = slides[nextIndex];
+    if (nextSlideEl.dataset.bg) {
+      nextSlideEl.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${nextSlideEl.dataset.bg}')`;
+      delete nextSlideEl.dataset.bg;
+    }
+
+    const preloadIndex = (nextIndex + 1) % shuffled.length;
+    const preloadSlideEl = slides[preloadIndex];
+    if (preloadSlideEl && preloadSlideEl.dataset.bg) {
+      preloadSlideEl.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${preloadSlideEl.dataset.bg}')`;
+      delete preloadSlideEl.dataset.bg;
+    }
+
     slides[currentSlide].classList.remove("active");
     dots[currentSlide].classList.remove("active");
 
@@ -230,6 +247,13 @@ const renderHero = () => {
 
   if (shuffled.length > 0) {
     updateSlide(0);
+    if (shuffled.length > 1) {
+      const secondSlide = slideshowContainer.querySelectorAll(".hero-slide")[1];
+      if (secondSlide && secondSlide.dataset.bg) {
+        secondSlide.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${secondSlide.dataset.bg}')`;
+        delete secondSlide.dataset.bg;
+      }
+    }
   } else {
     navOverlay.style.display = "none";
   }
