@@ -326,13 +326,12 @@ img {
   scroll-snap-align: start;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   animation: fadeUp 0.6s ease both;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
   border: 2px solid transparent;
   cursor: pointer;
 }
 
 .tile:hover {
-  transform: translateY(-4px) !important;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   border-color: var(--od-yellow);
 }
