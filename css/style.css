@@ -290,10 +290,12 @@ img {
 
 .hero-fold:not(.hero-article) p {
   text-shadow: 0 3px 15px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 0.95);
+  margin-top: 28px;
 }
 
 .hero-fold:not(.hero-article) .button {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), 0 4px 10px rgba(0, 0, 0, 0.6) !important;
+  margin-top: 32px !important;
 }
 
 .hero-fold:not(.hero-article) .button:hover {
