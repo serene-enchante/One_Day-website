@@ -301,12 +301,37 @@ img {
   justify-content: center;
 }
 
+.tile-row-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 24px;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
 .tile-row {
   display: flex;
   gap: 24px;
   overflow-x: auto;
   padding-bottom: 12px;
   scroll-snap-type: x mandatory;
+}
+
+.tile-row.autoscroll {
+  overflow-x: visible;
+  width: max-content;
+  animation: autoscroll 80s linear infinite;
+  padding-bottom: 20px;
+}
+
+@keyframes autoscroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
 }
 
 .tile-row::-webkit-scrollbar {

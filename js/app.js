@@ -198,15 +198,27 @@ const renderStoriesRow = () => {
     </div>
   `;
 
-  const row = document.createElement("div");
-  row.className = "tile-row";
+  const wrapper = document.createElement("div");
+  wrapper.className = "tile-row-wrapper";
 
-  siteData.articles
+  const row = document.createElement("div");
+  row.className = "tile-row autoscroll";
+
+  const articlesToRender = siteData.articles
     .filter((article) => article.slug !== "about-author")
-    .slice(0, 6)
-    .forEach((article, index) => {
-      row.appendChild(buildTile(article, index));
-    });
+    .slice(0, 6);
+
+  // Render first set
+  articlesToRender.forEach((article, index) => {
+    row.appendChild(buildTile(article, index));
+  });
+
+  // Render duplicated set for seamless loop
+  articlesToRender.forEach((article, index) => {
+    row.appendChild(buildTile(article, index));
+  });
+
+  wrapper.appendChild(row);
 
   const button = document.createElement("button");
   button.className = "button button-dark";
@@ -219,7 +231,7 @@ const renderStoriesRow = () => {
   buttonWrap.className = "center-actions";
   buttonWrap.appendChild(button);
 
-  section.appendChild(row);
+  section.appendChild(wrapper);
   section.appendChild(buttonWrap);
   return section;
 };
