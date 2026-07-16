@@ -118,11 +118,13 @@ const buildHeroSection = ({
 }) => {
   const hero = document.createElement("section");
   hero.className = `section hero-base hero-fold${alignEnd ? " hero-article" : ""}`;
-  if (imageUrl) {
-    const normalizedUrl = cleanImageUrl(imageUrl);
-    hero.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${normalizedUrl}')`;
-  }
+  const normalizedUrl = imageUrl ? cleanImageUrl(imageUrl) : "";
+  const bgStyle = imageUrl
+    ? ` style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${normalizedUrl}')"`
+    : "";
   hero.innerHTML = `
+    <div class="hero-bg-image"${bgStyle}></div>
+    <div class="hero-noise-overlay"></div>
     <div class="hero-divider-line"></div>
     <div class="hero-content-inner ${alignEnd ? "article-hero-inner" : ""}">
       ${metaTop ? `<div class="article-meta-top">${metaTop}</div>` : ""}
@@ -178,6 +180,10 @@ const renderHero = () => {
   }
 
   hero.appendChild(slideshowContainer);
+
+  const noiseOverlay = document.createElement("div");
+  noiseOverlay.className = "hero-noise-overlay";
+  hero.appendChild(noiseOverlay);
 
   const heroHeader = siteData.settings.hero_header || "Honor other's&nbsp;passions,<br />honor your own.";
   const heroSubtitle = siteData.settings.hero_subtitle || "A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.";
