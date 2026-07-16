@@ -524,13 +524,22 @@ main > .section:first-child .stories-header {
   margin: 20px 0 32px;
 }
 
-.story-controls input,
-.story-controls select {
-  padding: 10px 14px;
+.story-controls input {
+  padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid #4d4d4d;
+  border: none;
   background: #1c1c1c;
   color: var(--od-white);
+  outline: none;
+}
+
+.story-controls select {
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  color: var(--od-white);
+  cursor: pointer;
+  outline: none;
 }
 
 .article-hero-inner {
@@ -755,10 +764,11 @@ main > .section:first-child .stories-header {
 .contact-form textarea {
   padding: 14px 16px;
   border-radius: 14px;
-  border: 1px solid #444;
+  border: none;
   background: #1b1b1b;
   color: var(--od-white);
   line-height: 1.5;
+  outline: none;
 }
 
 .site-footer {
