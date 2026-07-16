@@ -341,13 +341,8 @@ img {
   height: 180px;
   background-size: cover;
   background-position: center;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   z-index: 1;
-}
-
-.tile:hover .tile-image {
-  transform: scale(1.1);
 }
 
 .tile-body {
