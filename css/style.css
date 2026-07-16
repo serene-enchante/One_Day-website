@@ -386,6 +386,16 @@ img {
   margin-bottom: 24px;
 }
 
+main > .section:first-child .stories-header {
+  padding-top: 70px;
+}
+
+@media (max-width: 768px) {
+  main > .section:first-child .stories-header {
+    padding-top: 40px;
+  }
+}
+
 .stories-header h2 {
   font-family: "Kingthings", serif;
   font-size: 2.4rem;
