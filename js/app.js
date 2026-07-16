@@ -387,6 +387,7 @@ const renderStories = () => {
   const controls = document.createElement("div");
   controls.className = "story-controls";
   controls.innerHTML = `
+    <div></div>
     <input type="search" placeholder="Search stories" aria-label="Search stories" />
     <select aria-label="Sort stories">
       <option value="newest">Newest first</option>
