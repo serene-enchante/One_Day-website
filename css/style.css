@@ -173,6 +173,23 @@ img {
   );
 }
 
+.hero-divider-line {
+  position: absolute;
+  inset: 0;
+  background: var(--od-yellow);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  clip-path: polygon(
+    0 calc(100% - var(--hero-notch) - 8px),
+    50% calc(100% - 8px),
+    100% calc(100% - var(--hero-notch) - 8px),
+    100% 100%,
+    0 100%
+  );
+}
+
 /* Slideshow styles */
 .hero-slideshow-container {
   position: absolute;
@@ -266,7 +283,7 @@ img {
   padding: 0 24px;
   text-align: left;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero-base h1 {

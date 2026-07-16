@@ -123,6 +123,7 @@ const buildHeroSection = ({
     hero.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.95) 100%), url('${normalizedUrl}')`;
   }
   hero.innerHTML = `
+    <div class="hero-divider-line"></div>
     <div class="hero-content-inner ${alignEnd ? "article-hero-inner" : ""}">
       ${metaTop ? `<div class="article-meta-top">${metaTop}</div>` : ""}
       <h1>${title}</h1>
@@ -192,6 +193,10 @@ const renderHero = () => {
     location.hash = "#/contact";
   });
   hero.appendChild(content);
+
+  const dividerLine = document.createElement("div");
+  dividerLine.className = "hero-divider-line";
+  hero.appendChild(dividerLine);
 
   const navOverlay = document.createElement("div");
   navOverlay.className = "hero-slideshow-nav";
@@ -716,6 +721,11 @@ const updateHeroFold = () => {
     const progress = Math.min(travel / (height * 0.6), 1);
     const notch = (progress * 8).toFixed(2);
     hero.style.setProperty("--hero-notch", `${notch}%`);
+
+    const divider = hero.querySelector(".hero-divider-line");
+    if (divider) {
+      divider.style.opacity = Math.max(0, Math.min(1, (progress - 0.05) * 4)).toFixed(2);
+    }
 
     const nav = hero.querySelector(".hero-slideshow-nav");
     if (nav) {
