@@ -769,6 +769,14 @@ const init = async () => {
 
 menuToggle.addEventListener("click", () => {
   nav.classList.toggle("open");
+  menuToggle.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuToggle.classList.remove("open");
+  });
 });
 
 window.addEventListener("scroll", () => {
