@@ -1,14 +1,9 @@
 ---
 title: About the Author
 header: About the Author
-hook: I am gathering a series of life stories entitled, ‘It’s Monday Morning . .
-  .’ which I am sharing.  It’s a sad statistic – heart attacks in the US happen
-  most often on Mondays in the morning.  Researchers theorize the Monday risk
-  could relate to the stress of the workweek. In my opinion, maybe too many
-  people are heading off to jobs that don’t ‘fit’ their spirit. I will continue
-  to point my nose in the direction of my interest to help youths live authentic
-  lives by finding and honoring their interests and following what excites
-  them. 
+hook: '"I will continue to point my nose in the direction of my interest to help
+  youths live authentic lives by finding and honoring their interests and
+  following what excites them."'
 date: 2026-07-16
 theme: About the Author
 main_image: /images/pexels-omaralnahi-45702.webp
