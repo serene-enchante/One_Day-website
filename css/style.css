@@ -417,6 +417,8 @@ img {
   transform: rotate(-3deg);
   box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.5);
   justify-self: center;
+  will-change: transform, box-shadow;
+  transform-style: preserve-3d;
 }
 
 .stories-header {

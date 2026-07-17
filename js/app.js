@@ -320,6 +320,33 @@ const renderAbout = () => {
     </div>
     <div class="author-image" role="img" aria-label="Portrait of the author"></div>
   `;
+
+  const image = section.querySelector(".author-image");
+  if (image) {
+    image.addEventListener("mousemove", (e) => {
+      const rect = image.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      const dx = x - xc;
+      const dy = y - yc;
+      
+      const tiltX = -(dy / yc) * 12;
+      const tiltY = (dx / xc) * 12;
+      
+      image.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04) rotate(-3deg)`;
+      image.style.boxShadow = `${12 + (-tiltY * 1.5)}px ${12 + (tiltX * 1.5)}px 35px rgba(0, 0, 0, 0.6)`;
+      image.style.transition = "transform 0.08s ease, box-shadow 0.08s ease";
+    });
+    
+    image.addEventListener("mouseleave", () => {
+      image.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) rotate(-3deg)";
+      image.style.boxShadow = "12px 12px 30px rgba(0, 0, 0, 0.5)";
+      image.style.transition = "transform 0.5s ease, box-shadow 0.5s ease";
+    });
+  }
+
   section.querySelector("button").addEventListener("click", () => {
     location.hash = "#/about";
   });
