@@ -63,3 +63,34 @@ content:
       - name: body
         label: Global Settings Footer/Description
         type: rich-text
+
+  - name: author
+    label: About the Author
+    type: file
+    path: content/about-author.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: header
+        label: Header Title
+        type: string
+      - name: hook
+        label: Hook / Subtitle
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+        required: true
+      - name: theme
+        label: Theme / Category
+        type: string
+      - name: main_image
+        label: Author Image
+        type: image
+      - name: body
+        label: Content Body
+        type: rich-text
+

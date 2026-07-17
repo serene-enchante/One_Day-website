@@ -4,7 +4,7 @@ header: About the Author
 hook: A storyteller shaped by late-night conversations and sunlit kitchens, keeping a record of the people who inspire her.
 date: 2026-07-16
 theme: Profile
-main_image: images/profilePic.png
+main_image: /images/profilePic.png
 ---
 
 ## Keeping a record

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T09:58:50.877Z",
+  "generated_at": "2026-07-17T10:01:18.753Z",
   "settings": {
     "site_title": "Happiness Exposed",
     "logo_text": "Happiness Exposed",
@@ -17,7 +17,7 @@
       "body": "## Keeping a record\n\nEvery person carries a story that deserves to be written down. Sometimes it is a quiet habit, like a cup of tea at dawn. Other times it is a commitment, like showing up for friends when the work gets difficult.\n\nOne Day is a project designed to collect and share these threads of human connection.\n\n## The inspiration\n\nThis platform is inspired by the simple texture of everyday life. By looking closer at the routines we repeat, the things we build, and the conversations we have, we find the sparks that make us who we are.\n\nThank you for being here, reading, and sharing your journey.",
       "date": "2026-07-16",
       "theme": "Profile",
-      "main_image": "images/profilePic.png"
+      "main_image": "/images/profilePic.png"
     },
     {
       "slug": "story-alesha-lurie",
