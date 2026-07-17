@@ -1,15 +1,11 @@
 ---
 title: Ben Garvey
 header: Ben Garvey
-hook: ‘It’s ‘Monday Morning’ and Ben had a personal dream of filming a movie
-  about Capoeira Dancers in Brazil. One in particular was a legend called the
-  “Fly Away Beetle”. Ben put up his plans for the movie on his work studio white
-  board.  From that day forward, this film became his main focus.  Finally, he
-  decided it was time to make the film. He and his friend, Cosmos Corbin,
-  scheduled flights to Brazil. Ben’s dream was coming alive!  
+hook: "‘It’s ‘Monday Morning’ and Ben had a personal dream of filming a movie
+  about Capoeira Dancers in Brazil. "
 date: 2026-05-01
 theme: So. . . What Do You Want YOUR Monday Mornings To Look Like?
-main_image: /images/ben-gravey.png
+main_image: /images/ben-gravey.jpg
 ---
 But a funny thing happened right before they flew to Brazil. The special camera Cosmos ordered for Ben to use for filming the movie scenes still hadn't arrived two days before their scheduled flights! Ben called the camera rental company asking where the camera was that Cosmos had ordered. The guy was shocked that Cosmos was a real guy!  He thought it was a hoax order assuming ‘Cosmos’ couldn't be a real person’s name!  A camera was overnighted immediately.  
 
