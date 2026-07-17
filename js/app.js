@@ -375,7 +375,7 @@ const buildTile = (article, index) => {
   const template = document.getElementById("tile-template");
   const tile = template.content.firstElementChild.cloneNode(true);
   const imgUrl = cleanImageUrl(article.main_image);
-  tile.querySelector(".tile-image").style.backgroundImage = `url(${imgUrl})`;
+  tile.querySelector(".tile-image").style.backgroundImage = `url("${imgUrl}")`;
   tile.querySelector(".tile-date").textContent = formatDate(article.date);
   tile.querySelector(".tile-title").textContent = article.title;
   tile.querySelector(".tile-hook").textContent = article.hook || "";
