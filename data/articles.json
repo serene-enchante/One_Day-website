@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T10:04:10.799Z",
+  "generated_at": "2026-07-17T10:09:46.014Z",
   "settings": {
     "site_title": "Happiness Exposed",
     "logo_text": "Happiness Exposed",
@@ -33,26 +33,6 @@
       "main_image": "/images/Alesha Lurie Gradient.webp"
     },
     {
-      "slug": "story-title",
-      "title": "title",
-      "header": "second title",
-      "hook": "Ben Garvey does this every morning",
-      "body": "hello \n\n# heading\n\nhello\n\n> quote",
-      "date": "2026-07-16",
-      "theme": "So what do you",
-      "main_image": ""
-    },
-    {
-      "slug": "story-test-new-entry",
-      "title": "new article name",
-      "header": "title",
-      "hook": "Test test test meow meow meow",
-      "body": "test test",
-      "date": "2026-07-04",
-      "theme": "testing",
-      "main_image": ""
-    },
-    {
       "slug": "story-monday-mornings",
       "title": "Ben Garvey",
       "header": "Ben Garvey",
@@ -61,36 +41,6 @@
       "date": "2026-05-01",
       "theme": "So. . . What Do You Want YOUR Monday Mornings To Look Like?",
       "main_image": "/images/ben-gravey.png"
-    },
-    {
-      "slug": "story-quiet-mornings",
-      "title": "Quiet Mornings",
-      "header": "Quiet Mornings",
-      "hook": "How dawn rituals became a shelter for creativity.",
-      "body": "## The first light\n\nThere is a small corner of the kitchen where the morning sun rests for ten minutes. In that light, ideas arrive softly and without pressure.\n\n## A cup and a page\n\nThe practice is simple: boil water, pour tea, write three lines. Those lines have turned into chapters, collaborations, and new friendships.\n\n## Carrying it forward\n\nThe ritual is shared now, passed from one storyteller to the next.",
-      "date": "2024-10-12",
-      "theme": "Rituals",
-      "main_image": "images/bw01.jpg"
-    },
-    {
-      "slug": "story-keeping-promises",
-      "title": "Keeping Promises",
-      "header": "Keeping Promises",
-      "hook": "An ode to the people who stay when the work is hard.",
-      "body": "## The circle\n\nA group of friends met once a month for six years. The only rule was to show up with a story, even if the story felt unfinished.\n\n## The vow\n\nBy the fourth year, their meetings became a lifeline. They learned that keeping promises to each other was also keeping promises to themselves.\n\n## The invitation\n\nJoin the circle, even if the story is unfinished.",
-      "date": "2024-08-04",
-      "theme": "Community",
-      "main_image": "/images/pexels-mak_-jp-107017486-9548517-1.webp"
-    },
-    {
-      "slug": "story-after-the-show",
-      "title": "After the Show",
-      "header": "After the Show",
-      "hook": "Test test test meow meow meow",
-      "body": "## The quiet stage\n\nThe lights fade, the audience leaves, and what remains is the echo of a promise: make something honest.\n\n## The ledger\n\nEvery artist keeps a private list of the nights that mattered. This was one of them.\n\n## The next morning\n\nThe story becomes a memory, and the memory becomes fuel.",
-      "date": "2024-06-22",
-      "theme": "Reflection",
-      "main_image": "/images/pexels-archana-ramakrishna-221711916-13548213.webp"
     }
   ]
 }

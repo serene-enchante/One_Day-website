@@ -46,10 +46,12 @@ content:
     fields:
       - name: site_title
         label: Site Title
+        description: "What the browser sees as the name of the website"
         type: string
         required: true
       - name: logo_text
         label: Logo Text
+        description: "The website name used for the text logo in the upper left corner of the website"
         type: string
         required: true
       - name: favicon
