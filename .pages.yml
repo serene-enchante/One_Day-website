@@ -16,26 +16,33 @@ content:
     fields:
       - name: title
         label: Title
+        description: "The primary title of the story, used internally and for lists"
         type: string
         required: true
       - name: header
         label: Header Title
+        description: "The main heading displayed at the top of the article details view"
         type: string
       - name: hook
         label: Hook / Subtitle
+        description: "A short, engaging summary displayed on the homepage slideshow, previews, and list cards"
         type: string
       - name: date
         label: Publish Date
+        description: "The publication date, used to order stories chronologically on the website"
         type: date
         required: true
       - name: theme
         label: Theme / Category
+        description: "The category tag for the article (e.g. Purpose, Profile, Rituals)"
         type: string
       - name: main_image
         label: Main Image
+        description: "The primary header / background photo for the article fold"
         type: image
       - name: body
         label: Content Body
+        description: "The main markdown body text of the story"
         type: rich-text
 
   - name: settings
@@ -56,6 +63,7 @@ content:
         required: true
       - name: favicon
         label: Favicon Image
+        description: "The small tab icon displayed by browsers (recommended size: 32x32 px, format: WebP or ICO)"
         type: image
 
   - name: homepage_hero
@@ -66,9 +74,11 @@ content:
     fields:
       - name: hero_header
         label: Hero Header Text
+        description: "The main bold heading title shown over the homepage hero background fold"
         type: string
       - name: hero_subtitle
         label: Hero Subtitle Text
+        description: "The introductory bio description text displayed below the hero header"
         type: string
 
   - name: author
@@ -79,25 +89,32 @@ content:
     fields:
       - name: title
         label: Title
+        description: "The page title of the author view (e.g. About the Author)"
         type: string
         required: true
       - name: header
         label: Header Title
+        description: "The main heading title shown at the top of the author page view"
         type: string
       - name: hook
         label: Hook / Subtitle
+        description: "A short introductory blurb displayed on the homepage 'About the Author' card preview"
         type: string
       - name: date
         label: Publish Date
+        description: "The publication/edit date used for internal indexing"
         type: date
         required: true
       - name: theme
         label: Theme / Category
+        description: "Category classification for the page (e.g. Profile)"
         type: string
       - name: main_image
         label: Author Image
+        description: "The main background portrait photo for the author details page"
         type: image
       - name: body
         label: Content Body
+        description: "The full markdown text biography of the author"
         type: rich-text
 
