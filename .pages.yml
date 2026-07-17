@@ -10,6 +10,7 @@ content:
     exclude:
       - settings.md
       - about-author.md
+      - homepage-hero.md
     format: yaml-frontmatter
     filename: "story-{slug}.md"
     fields:
@@ -54,15 +55,19 @@ content:
       - name: favicon
         label: Favicon Image
         type: image
+
+  - name: homepage_hero
+    label: Homepage Hero
+    type: file
+    path: content/homepage-hero.md
+    format: yaml-frontmatter
+    fields:
       - name: hero_header
         label: Hero Header Text
         type: string
       - name: hero_subtitle
         label: Hero Subtitle Text
         type: string
-      - name: body
-        label: Global Settings Footer/Description
-        type: rich-text
 
   - name: author
     label: About the Author

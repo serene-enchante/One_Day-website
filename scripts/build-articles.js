@@ -71,6 +71,7 @@ const main = () => {
   const entries = loadMarkdownFiles();
   const articles = [];
   let settings = {};
+  let homepage_hero = {};
 
   entries.forEach((entry) => {
     const raw = fs.readFileSync(entry.path, "utf8");
@@ -80,6 +81,11 @@ const main = () => {
 
     if (slug === "settings" || type === "settings") {
       settings = { ...frontMatter, body };
+      return;
+    }
+
+    if (slug === "homepage-hero" || type === "homepage_hero") {
+      homepage_hero = { ...frontMatter, body };
       return;
     }
 
@@ -100,6 +106,7 @@ const main = () => {
   const payload = {
     generated_at: new Date().toISOString(),
     settings,
+    homepage_hero,
     articles,
   };
 

@@ -208,8 +208,9 @@ const renderHero = () => {
   noiseOverlay.className = "hero-noise-overlay";
   hero.appendChild(noiseOverlay);
 
-  const heroHeader = siteData.settings.hero_header || "Honor other's&nbsp;passions,<br />honor your own.";
-  const heroSubtitle = siteData.settings.hero_subtitle || "A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.";
+  const heroData = siteData.homepage_hero || {};
+  const heroHeader = heroData.hero_header || "Honor other's&nbsp;passions,<br />honor your own.";
+  const heroSubtitle = heroData.hero_subtitle || "A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.";
 
   const content = document.createElement("div");
   content.className = "hero-content-inner";

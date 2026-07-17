@@ -1,12 +1,15 @@
 {
-  "generated_at": "2026-07-17T10:01:18.753Z",
+  "generated_at": "2026-07-17T10:04:10.799Z",
   "settings": {
     "site_title": "Happiness Exposed",
     "logo_text": "Happiness Exposed",
     "favicon": "/images/favicon.webp",
+    "body": ""
+  },
+  "homepage_hero": {
     "hero_header": "Honor other's passions, honor your own.",
     "hero_subtitle": "A place to trade stories, celebrate creativity, and preserve the sparks that make us who we are.",
-    "body": "Global settings for the One Day site."
+    "body": "Homepage hero settings for the One Day site."
   },
   "articles": [
     {
