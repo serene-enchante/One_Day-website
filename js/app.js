@@ -335,8 +335,13 @@ const renderAbout = () => {
     <div class="author-image" role="img" aria-label="Portrait of the author"></div>
   `;
 
+  const authorImg = authorArticle && authorArticle.main_image
+    ? cleanImageUrl(authorArticle.main_image)
+    : "images/profilePic.png";
+
   const image = section.querySelector(".author-image");
   if (image) {
+    image.style.backgroundImage = `url("${authorImg}")`;
     image.addEventListener("click", () => {
       location.hash = "#/about";
     });

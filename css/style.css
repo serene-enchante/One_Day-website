@@ -412,7 +412,9 @@ img {
 .about-author .author-image {
   width: min(320px, 100%);
   aspect-ratio: 1 / 1;
-  background: url("../images/profilePic.png") center/cover no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 20px;
   transform: rotate(-3deg);
   box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.5);
