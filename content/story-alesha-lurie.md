@@ -4,7 +4,7 @@ header: Alesha Lurie
 hook: Alesha followed her love of dogs into a full time business.
 date: 2026-07-16
 theme: So. . . What Do You Want YOUR Monday Mornings To Look Like?
-main_image: /images/Alesha Lurie Gradient.webp
+main_image: /images/Alesha Lurie Gradient-flip.webp
 ---
 **ALESHA LURIE, Founder/Owner of Alesha’s Leashes**
 
